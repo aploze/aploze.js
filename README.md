@@ -18,7 +18,7 @@ To install Aploze library, add the script tag in the head of your website.
 		a[o] = a[o] || function () { (a[o].q = a[o].q || []).push(arguments) }
 		;(e = p.createElement(l)), (js = p.getElementsByTagName(l)[0])
 		e.id = o;e.src = z;e.async = 1;js.parentNode.insertBefore(e, js)
-	})(window, document, 'script', 'Aploze', 'https://app.aploze.com/aploze.js')
+	})(window, document, 'script', 'Aploze', 'https://app-staging.aploze.com/aploze.js')
 </script>
 ```
 
