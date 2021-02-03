@@ -144,6 +144,23 @@ Aploze("submit", "cart.sync", {
 })
 ```
 
+##### - `cart.error`
+
+- You have an error on your website cart. (don't forget to resync your cart after that)
+
+```javascript
+
+Aploze("submit", "cart.error", {
+	callback: function(response){
+		if (response.error) {
+			console.log('error', response)
+		} else {
+			console.log('success', response)
+		}
+	}
+})
+```
+
 ##### - `product.disable`
 
 - You receive a cart update by listening the Aploze `cart.update` event, but a new product is not available or out of stock. Aploze App needs to know which product is not available to prevent the user to add it again.
