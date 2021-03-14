@@ -31,7 +31,7 @@ Please ask us if you don't have one.
 
 ```javascript
 Aploze('init', {
-	id: 'YBKWdhAAACMAFLD7', // Your Channel ID
+	id: '[Your Channel ID]',
 	liveUrl: 'https://yourwebsite.com/live', // Your website live page URL (where the iFrame need to be created)
 	env: 'prod', // 'prod' or 'staging' (default: 'prod')
 	debug: true, // enable logs (default : false)
@@ -48,24 +48,11 @@ Aploze('init', {
 The First way of communication is to listen what's happening on Aploze App.
 Here a list of events that you can subscribe to :
 
-#### it works
-
 `app.ready` : The app is ready
 
 `cart.update` : The cart is updated during live & replay
 
 `cart.validate` : The cart is validated by the user during live & replay
-
-#### coming soon
-
-`chat.message` : A new message is shown in chat during live
-
-`chat.send` : The user send a new message during live
-
-`stories.change` : The user browse stories during replay
-
-`ui.like` The user send a like during live
-
 
 
 #### How to listen events ?
@@ -187,9 +174,20 @@ Aploze("submit", "product.disable", {
 - You receive a cart validation by listening  `cart.validate`, so you need to redirect the user to your checkout page and let him fill his delivery and payments information. At the end of the checkout, when a cart is converted to an order, I mean when the products of this cart are bought, Aploze needs to be alerted, in order to know exactly the conversion rate of the Liveshopping operation.
 
 ```javascript
+
 var completedCheckoutCart = {
-	id: 4670487234
-}
+	id: 4670487234, // Cart ID
+	items: [
+		{
+			id: 74590366,
+			quantity: 1
+		},
+		{
+			id: 74590370,
+			quantity: 3
+		}
+	]
+};
 
 Aploze("submit", "cart.buy", {
 	datas: completedCheckoutCart,
